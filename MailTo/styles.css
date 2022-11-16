@@ -1,0 +1,41 @@
+body {
+	background-color: white;
+	text-align:center;
+	font-family: Arial;
+	}
+	
+img {
+	margin-bottom: 17vh;
+	}
+	
+div{
+	display:block;
+}
+
+h1 {
+	margin-bottom: 5%;
+	max-width:80%;
+	margin-left:auto;
+	margin-right:auto;
+	line-height: 1.45em;
+}
+
+a {
+	padding: 20px 40px;
+	text-align:center;
+	background: #ae0001;
+	border:none;
+	margin:auto;
+	}
+	
+a{
+	color: white;
+	text-decoration: none;
+	font-size: 1.4em;
+	}
+	
+
+a:hover{
+	text-decoration: underline;
+	}
+	
