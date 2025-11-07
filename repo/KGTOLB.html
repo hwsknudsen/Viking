@@ -23,52 +23,35 @@
     <h1>Convert Kilograms to Pounds</h1>
     <label for="kg">Enter weight in kg:</label>
     <input type="number" id="kg" placeholder="e.g., 10">
-    <button id="Button" onclick="convertToLb()">Convert</button>
+    <button id="Button">Convert</button>
     <div id="result"></div>
 
     <script>
 
-	function Clear1() {
-		document.getElementById('kg').value = "";
-		document.getElementById('kg').focus();
-	}
         function convertToLb() {
-            const kg = parseFloat(document.getElementById('kg').value);
-            if (!isNaN(kg) && kg > 0 && kg < 1000 ) {
-                const lb = kg * 2.20462; // Conversion factor
-                document.getElementById('result').textContent = `${kg} kg = ${lb.toFixed(2)} lb`;
-		
+            const input = document.getElementById('kg');
+            const resultDiv = document.getElementById('result');
+            const kg = parseFloat(input.value);
 
-
+            if (!isNaN(kg) && kg > 0 && kg < 1000) {
+                const lb = kg * 2.20462;
+                resultDiv.textContent = `${kg} kg = ${lb.toFixed(2)} lb`;
             } else {
-                document.getElementById('result').textContent = 'Please enter a valid number. between 0 and 999';
+                resultDiv.textContent = 'Please enter a valid number between 0 and 999.';
             }
-	
-		document.getElementById('kg').value = "";
-		document.getElementById('kg').focus();
 
+            clearInput();
         }
 
+        // Add both click and Enter key listeners
+        document.getElementById("Button").addEventListener("click", convertToLb);
 
-
-	// Get the input field
-var input = document.getElementById("kg");
-
-// Execute a function when the user presses a key on the keyboard
-input.addEventListener("keypress", function(event) {
-  // If the user presses the "Enter" key on the keyboard
-  if (event.key === "Enter") {
-    // Cancel the default action, if needed
-    event.preventDefault();
-    // Trigger the button element with a click
-    document.getElementById("Button").click();
-  }
-});
-
-
-
-
-
+        document.getElementById("kg").addEventListener("keypress", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                convertToLb();
+            }
+        });
     </script>
 </body>
 </html>
