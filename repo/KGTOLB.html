@@ -40,7 +40,8 @@
                 resultDiv.textContent = 'Please enter a valid number between 0 and 999.';
             }
 
-            clearInput();
+            document.getElementById('kg').value = "";
+    		document.getElementById('kg').focus();
         }
 
         // Add both click and Enter key listeners
@@ -55,3 +56,4 @@
     </script>
 </body>
 </html>
+
