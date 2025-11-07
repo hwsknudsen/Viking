@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KG to LB Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        input, button {
+            padding: 10px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Convert Kilograms to Pounds</h1>
+    <label for="kg">Enter weight in kg:</label>
+    <input type="number" id="kg" placeholder="e.g., 10">
+    <button onclick="convertToLb()">Convert</button>
+    <div id="result"></div>
+
+    <script>
+        function convertToLb() {
+            const kg = parseFloat(document.getElementById('kg').value);
+            if (!isNaN(kg)) {
+                const lb = kg * 2.20462; // Conversion factor
+                document.getElementById('result').textContent = `${kg} kg = ${lb.toFixed(2)} lb`;
+            } else {
+                document.getElementById('result').textContent = 'Please enter a valid number.';
+            }
+        }
+    </script>
+</body>
+</html>
